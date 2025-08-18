@@ -39,7 +39,7 @@ body{
     top:0; 
     z-index:10;
     background: #9e8e6d;
-    border-bottom:1px solid #e5e7eb;
+    border-bottom: 2px solid #9e8e6d;
 }
 
 .topbar .wrap{
@@ -84,6 +84,7 @@ body{
     width: min(360px, 60vw);
     position: relative;
   }
+
   .search{
     width:100%;
     padding:11px 14px 11px 38px;
@@ -182,10 +183,24 @@ body{
   .sub   { font-size: 12px; }
 
   .topbar .wrap { gap: 10px; padding: calc(10px + var(--safe-top)) 12px 10px; }
-  .brand { font-size: 18px; margin-right: 16px; }
-  .brand1, .brand2 { font-size: 16px; margin-right: 12px; }
 
-  .search-wrap { width: min(260px, 58vw); }
+  .brand { 
+    font-size: 18px; 
+    margin-right: 16px; 
+  }
+
+  .brand1, .brand2 { 
+    font-size: 16px; 
+    margin-right: 12px; 
+    margin-left: 10px;
+  }
+
+  .search-wrap { 
+    width: min(260px, 58vw); 
+    zoom: 0.75;
+    
+    
+  }
   .search { padding: 10px 12px 10px 36px; }
   .search-icon { left: 10px; }
 
@@ -210,7 +225,7 @@ body{
 
 .brand1, 
 .brand2 {
-  font-weight: 500;  
+  font-weight: 650;  
   font-size: 16px;   
 }
 

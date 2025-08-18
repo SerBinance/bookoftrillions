@@ -380,7 +380,7 @@ body {
 @media (min-width: 350px) and (max-width: 390px) {
   .nav-brand { 
     font-size: 18px; 
-    margin-right: 4.5rem;
+    margin-right: 4rem;
   }
   
   .nav-cta   { 
@@ -398,7 +398,7 @@ body {
 @media (min-width: 390px) and (max-width: 420px) {
   .nav-brand { 
     font-size: 18px; 
-    margin-right: 5.5rem;
+    margin-right: 5rem;
   }
   
   .nav-cta   { 
@@ -416,7 +416,7 @@ body {
 @media (min-width: 420px) and (max-width: 440px) {
   .nav-brand { 
     font-size: 18px; 
-    margin-right: 6rem;
+    margin-right: 5.5rem;
   }
   
   .nav-cta   { 

@@ -37,7 +37,7 @@ body{
     top:0; 
     z-index:10;
     background: #9e8e6d;
-    border-bottom:1px solid #e5e7eb;
+    border-bottom: 2px solid #9e8e6d;
 }
 
 .topbar .wrap{
@@ -162,7 +162,7 @@ body{
     margin: calc(12px + var(--safe-top)) auto 16px;
     border-width: 1px;
   }
-  .dune-container iframe{ height: 75svh; }
+  .dune-container iframe{ height: 80svh; }
 }
 
 /* Small phones (360–430px logical width: many Androids & iPhone Mini/SE) */
@@ -178,14 +178,14 @@ body{
     width: 98%;
     margin: calc(10px + var(--safe-top)) auto 12px;
   }
-  .dune-container iframe{ height: 72svh; }
+  .dune-container iframe{ height: 76svh; }
 }
 
 /* Extra small (<=360px) */
 @media (max-width: 360px){
   .brand{ font-size: 15px; }
   .brand1, .brand2{ font-size: 14px; }
-  .dune-container iframe{ height: 68svh; }
+  .dune-container iframe{ height: 71svh; }
 }
 
 /* --------------------------------------------
@@ -202,7 +202,7 @@ body{
   }
   /* iOS has aggressive browser chrome; bias to svh a bit lower */
   @media (max-width: 430px){
-    .dune-container iframe{ height: 70svh; }
+    .dune-container iframe{ height: 72svh; }
   }
 }
 
@@ -212,12 +212,12 @@ body{
 ---------------------------------------------*/
 /* Tall Android screens (19.5:9, 20:9) benefit from a bit more iframe */
 @media (max-width: 430px) and (min-height: 700px){
-  .dune-container iframe{ height: 76svh; }
+  .dune-container iframe{ height: 80svh; }
 }
 
 /* Shorter Android screens */
 @media (max-width: 412px) and (max-height: 700px){
-  .dune-container iframe{ height: 70svh; }
+  .dune-container iframe{ height: 73svh; }
 }
 
 /* Make nav shrink instead of wrapping */
