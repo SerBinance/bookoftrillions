@@ -390,8 +390,8 @@ body {
   }
 
   .nav-image{
-    margin-left: 3rem;
-    margin-bottom: 0.35rem;
+    margin-left: 2rem;
+    margin-bottom: 0.3rem;
   }
 }
 
@@ -408,8 +408,8 @@ body {
   }
 
   .nav-image{
-    margin-left: 4rem;
-    margin-bottom: 0.35rem;
+    margin-left: 3rem;
+    margin-bottom: 0.3rem;
   }
 }
 
@@ -426,14 +426,14 @@ body {
   }
 
   .nav-image{
-    margin-left: 4rem;
+    margin-left: 3rem;
     margin-bottom: 0.35rem;
   }
 }
 
 @media (min-width: 440px) and (max-width: 770px) {
  .nav-image{
-  margin-left: 15rem;
+  margin-left: 14rem;
   margin-bottom: 0.5rem;
  }
   
