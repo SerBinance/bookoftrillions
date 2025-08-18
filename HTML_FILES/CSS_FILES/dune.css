@@ -12,7 +12,8 @@
     --btn-bg: rgba(255,255,255,.08);
     --btn-bd: rgba(255,255,255,.35);
     --btn-shadow: 0 10px 30px rgba(31,60,136,.35);
-    --pill-start:#ffb074; --pill-end:#cfa5ff;
+    --pill-start:#ffb074; 
+    --pill-end:#cfa5ff;
 }
 
 *{
@@ -27,9 +28,6 @@ body{
     margin:0;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     background:
-    radial-gradient(60vmin 60vmin at 58% 30%, rgba(255,255,255,.14), rgba(255,255,255,0) 60%),
-    radial-gradient(40vmin 40vmin at 70% 70%, rgba(255,180,255,.18), rgba(255,180,255,0) 65%),
-    radial-gradient(50vmin 50vmin at 35% 85%, rgba(255,128,196,.22), rgba(255,128,196,0) 70%),
     linear-gradient(135deg, var(--bg1), var(--bg2));
     color: var(--text);
 }
@@ -48,14 +46,14 @@ body{
 }
 
 .brand{
-    font-weight:800; 
+    font-weight:700; 
     font-size:22px; 
     letter-spacing:.2px;
     margin-right: 150px;
 }
 
 .brand1{
-    font-weight:700; 
+    font-weight:600; 
     font-size:20px; 
     letter-spacing:.2px;
     margin-right: 40px;
@@ -67,7 +65,7 @@ body{
 }
 
 .brand2{
-    font-weight:700; 
+    font-weight:600; 
     font-size:20px; 
     letter-spacing:.2px;
     color: #000;
@@ -79,16 +77,183 @@ body{
 
 .dune-container {
     width: 95%;
-    margin: 20px auto; /* equal left/right/top spacing */
-    border: 2px solid #ccc; /* visible border */
+    margin: 20px auto; 
+    border: 2px solid #ccc; 
     border-radius: var(--radius);
     background: var(--card-bg);
-    overflow: hidden; /* keeps iframe corners rounded */
+    overflow: hidden; 
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .dune-container iframe {
     width: 100%;
-    height: 85vh; /* adjust height as needed */
+    height: 85vh; 
     display: block;
 }
+
+/* --------------------------------------------
+   UNIVERSAL MOBILE IMPROVEMENTS (ALL DEVICES)
+---------------------------------------------*/
+:root{
+  /* fallback if env() unsupported */
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+}
+
+@supports (padding: max(env(safe-area-inset-top), 0px)) {
+  :root{
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Let the container breathe under notches & bottom bars */
+body{
+  padding-top: 0; /* topbar is sticky; we push container instead */
+  padding-bottom: var(--safe-bottom);
+}
+
+/* Use small viewport units so mobile browser bars don’t chop height */
+.dune-container iframe{
+  height: 85svh; /* replaces 85vh on mobile safely */
+}
+
+/* Tighter nav spacing by default on smaller screens */
+.topbar .wrap{
+  padding: 12px 14px;
+  gap: 12px;
+}
+
+/* --------------------------------------------
+   DESKTOP → TABLET
+---------------------------------------------*/
+@media (max-width: 1200px){
+  .topbar .wrap{ max-width: 100%; }
+  .brand{ margin-right: 80px; }
+  .brand1, .brand2{ font-size: 18px; }
+  .dune-container{ width: 96%; }
+}
+
+/* Large tablets / small laptops */
+@media (max-width: 992px){
+  .brand{ font-size: 20px; margin-right: 40px; }
+  .brand1, .brand2{ font-size: 17px; }
+  .dune-container{ width: 96%; }
+  .dune-container iframe{ height: 80svh; }
+}
+
+/* --------------------------------------------
+   PHONES (common Android & iPhone widths)
+---------------------------------------------*/
+@media (max-width: 768px){
+  .topbar .wrap{
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .brand{ font-size: 18px; margin-right: 12px; }
+  .brand1, .brand2{
+    font-size: 16px;
+    margin-right: 12px;
+  }
+
+  .dune-container{
+    width: 98%;
+    margin: calc(12px + var(--safe-top)) auto 16px;
+    border-width: 1px;
+  }
+  .dune-container iframe{ height: 75svh; }
+}
+
+/* Small phones (360–430px logical width: many Androids & iPhone Mini/SE) */
+@media (max-width: 430px){
+  .brand{ font-size: 16px; }
+  .brand1, .brand2{ font-size: 15px; }
+  .topbar .wrap{ gap: 8px; }
+
+  /* prevent nav wrapping uglily; allow links to wrap nicely */
+  #brand1, #brand2{ white-space: nowrap; }
+
+  .dune-container{
+    width: 98%;
+    margin: calc(10px + var(--safe-top)) auto 12px;
+  }
+  .dune-container iframe{ height: 72svh; }
+}
+
+/* Extra small (<=360px) */
+@media (max-width: 360px){
+  .brand{ font-size: 15px; }
+  .brand1, .brand2{ font-size: 14px; }
+  .dune-container iframe{ height: 68svh; }
+}
+
+/* --------------------------------------------
+   iPHONE-SPECIFIC POLISH
+   (Safari/iOS safe-area + iOS-only @supports feature)
+---------------------------------------------*/
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari hint */
+  .topbar{
+    padding-top: var(--safe-top);
+  }
+  .dune-container{
+    margin-top: calc(12px + var(--safe-top));
+  }
+  /* iOS has aggressive browser chrome; bias to svh a bit lower */
+  @media (max-width: 430px){
+    .dune-container iframe{ height: 70svh; }
+  }
+}
+
+/* --------------------------------------------
+   ANDROID-COMMON WIDTH TWEAKS
+   (Pixel/Samsung/Tecno/Infinix typically 360–412–430 widths)
+---------------------------------------------*/
+/* Tall Android screens (19.5:9, 20:9) benefit from a bit more iframe */
+@media (max-width: 430px) and (min-height: 700px){
+  .dune-container iframe{ height: 76svh; }
+}
+
+/* Shorter Android screens */
+@media (max-width: 412px) and (max-height: 700px){
+  .dune-container iframe{ height: 70svh; }
+}
+
+/* Make nav shrink instead of wrapping */
+@media (max-width: 768px){
+  .topbar .wrap{
+    flex-wrap: nowrap;         /* prevent stacking */
+    justify-content: space-between;
+    transform: scale(0.95);    /* zoom out slightly */
+    transform-origin: left;    /* zooms from left edge */
+  }
+}
+
+@media (max-width: 600px){
+  .topbar .wrap{
+    transform: scale(0.9);    
+  }
+}
+
+@media (max-width: 480px){
+  .topbar .wrap{
+    transform: scale(0.85);    
+  }
+}
+
+/* Phones only */
+@media (max-width: 768px){
+  .dune-container {
+    margin: 25px auto 6px;  /* top | left/right | bottom */
+  }
+}
+
+@media (max-width: 430px){
+  .dune-container {
+    margin: 28px auto 6px;  /* a bit more top space, less bottom */
+  }
+}
+
+
+
