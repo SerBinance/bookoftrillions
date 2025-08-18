@@ -6,7 +6,9 @@
     --accent:#11182710;
     --radius:14px;
     --app-bg: #6F6597;
-    --bg1:#8aaaf6; --bg2:#c698ff; --muted:#dbe4ff;
+    --bg1: #162F29;
+    --bg2: #162F29;
+    --muted:#dbe4ff;
     --btn-bg: rgba(255,255,255,.08);
     --btn-bd: rgba(255,255,255,.35);
     --btn-shadow: 0 10px 30px rgba(31,60,136,.35);
