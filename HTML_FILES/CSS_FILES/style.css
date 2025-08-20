@@ -1,42 +1,64 @@
-/* ===== Global app background ===== */
-:root { 
-  --app-bg: #162F29;
+/* =========================================
+   THEME TOKENS
+   ========================================= */
+:root {
+  /* colors */
+  --app-bg: #162f29;
+  --bg1: #162f29;
+  --bg2: #162f29;
+  --muted: #dbe4ff;
+  --btn-bg: rgba(255, 255, 255, 0.08);
+  --btn-bd: rgba(255, 255, 255, 0.35);
+  --pill-start: #ffb074;
+  --pill-end: #cfa5ff;
+
+  /* spacing (rem) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* radius & shadows */
+  --radius-lg: 1rem;
+  --radius-full: 100vmax;
+  --shadow-btn: 0 10px 30px rgba(31, 60, 136, 0.35);
+  --shadow-glass: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-html, body { 
-  height: 100%; 
-  margin: 0; 
-  background: var(--app-bg); 
-  color:#fff; 
+/* =========================================
+   BASE
+   ========================================= */
+html, body { height: 100%; }
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--app-bg);
+  color: #fff;
+  font-family: "Futura", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   overflow: hidden;
 }
 
-body { 
-  font-family: "Futura", sans-serif;
-  overflow: hidden; 
-}
-
-/* ===== Dashboard (painted from start) ===== */
-:root{
-  --bg1: #162F29;
-  --bg2: #162F29;
-  --muted:#dbe4ff;
-  --btn-bg: rgba(255,255,255,.08);
-  --btn-bd: rgba(255,255,255,.35);
-  --btn-shadow: 0 10px 30px rgba(31,60,136,.35);
-  --pill-start:#ffb074; 
-  --pill-end:#cfa5ff;
-}
-
-.dashboard-page{
-  position: fixed; inset: 0;
-  display:flex; flex-direction:column;
-  z-index:5;
-  opacity: 1;                /* visible from start */
+/* =========================================
+   PAGE WRAPPER
+   ========================================= */
+.dashboard-page {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  opacity: 1; /* visible from start */
   pointer-events: auto;
-  transition: opacity .6s ease;
-  color: white;
-  font-family: "Futura", sans-serif;
+  transition: opacity 0.6s ease;
   background: linear-gradient(135deg, var(--bg1), var(--bg2));
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
@@ -44,441 +66,477 @@ body {
 }
 
 /* stars layer */
-.dashboard-page::before{
-  content:"";
-  position:fixed; inset:0; pointer-events:none;
-  width:2px; height:2px; border-radius:50%; background:#fff; opacity:.9;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,.9));
+.dashboard-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
   box-shadow:
     62vw 14vh 0 0 #fff, 68vw 19vh 0 0 #fff, 71vw 10vh 0 0 #fff,
     56vw 26vh 0 0 #fff, 59vw 33vh 0 0 #fff, 65vw 44vh 0 0 #fff,
     73vw 48vh 0 0 #fff, 77vw 63vh 0 0 #fff, 82vw 72vh 0 0 #fff,
     90vw 58vh 0 0 #fff, 86vw 82vh 0 0 #fff, 60vw 75vh 0 0 #fff,
     52vw 53vh 0 0 #fff, 48vw 37vh 0 0 #fff, 45vw 24vh 0 0 #fff;
-  z-index:0;
+  z-index: 0;
 }
 
 /* vignette + grain */
-.dashboard-page::after{
-  content:"";
-  position:fixed; inset:0; pointer-events:none;
+.dashboard-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
   background:
-    radial-gradient(120vmax 120vmax at 50% 60%, rgba(0,0,0,0) 0%, rgba(0,0,0,.07) 100%),
+    radial-gradient(120vmax 120vmax at 50% 60%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.07) 100%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='.1'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0 0 .08 .08 .08 .08 .08'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  mix-blend-mode:soft-light; opacity:.22; z-index:0;
+  mix-blend-mode: soft-light;
+  opacity: 0.22;
+  z-index: 0;
 }
 
-/* layout */
-.wrap{
-  max-width:1200px; margin:0 auto; padding:28px 20px 80px; min-height:100dvh;
-  display:grid; gap:32px; grid-template-columns: 1.05fr .95fr; position: relative; z-index: 1;
-}
-.left{ padding-top:40px }
-.right{ display:flex; align-items:center; justify-content:center; position:relative }
-
-/* buttons */
-.buttons{ 
-  margin-top:48px; 
-  margin-left:6rem; 
-  display:flex; 
-  flex-direction:column; 
-  gap:4rem; 
-  max-width:540px; 
+/* =========================================
+   LAYOUT
+   ========================================= */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+  min-height: 100dvh;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1.05fr 0.95fr;
+  position: relative;
+  z-index: 1;
 }
 
-.glass-btn{
-  padding:28px; 
-  text-decoration:none; 
-  color:white; 
-  display:block; 
-  font-size:15px;
-  background: rgba(255,255,255,0.05); 
-  border-radius: 15px;
-  border: 2px solid rgb(255, 255, 255);
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  transition: transform .18s ease, 
-  box-shadow .18s ease, 
-  border-color .18s ease;
+.left {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
-.glass-btn:hover{
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* =========================================
+   NAVBAR (glass)
+   ========================================= */
+.navbar {
+  position: fixed;
+  top: 2em;
+  left: 20em;
+  right: 2em;
+  width: 50%;
+  z-index: 1000;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(12px) saturate(125%);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+  background: rgba(10, 8, 20, 0.2);
+  border: 1.5px solid #fff;
+  box-shadow: var(--shadow-glass);
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 600;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  letter-spacing: 0.2px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.nav-image img {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.125rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #201a29;
+  font-family: "Times New Romans", serif; /* kept as provided */
+  background: linear-gradient(135deg, var(--pill-start), var(--pill-end));
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+.nav-cta:active { transform: translateY(-1px); }
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.buttons {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 36rem;
+}
+
+.glass-btn {
+  display: block;
+  padding: var(--space-7);
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9375rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.9375rem;
+  border: 2px solid #fff;
+  box-shadow: var(--shadow-glass);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.glass-btn:hover {
   transform: translateY(-2px);
-  border-color: rgba(173,209,255,.75);
-  box-shadow: 0 18px 40px rgba(38,70,165,.45), inset 0 1px 0 rgba(255,255,255,.4);
+  border-color: rgba(173, 209, 255, 0.75);
+  box-shadow: 0 18px 40px rgba(38, 70, 165, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.glass-btn h3 {
+  margin: 0 0 var(--space-3);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.glass-btn p {
+  margin: 0;
+  color: #e4eaff;
+  opacity: 0.95;
+  font-weight: 500;
 }
 
-.glass-btn h3{ 
-  margin:0 0 8px; 
-  font-size:28px; 
-  font-weight:600 
+/* =========================================
+   BOOK
+   ========================================= */
+.book-wrap {
+  position: relative;
+  width: min(32.5rem, 90%);
+  aspect-ratio: 1 / 0.78;
 }
-
-.glass-btn p{ 
-  margin:0; 
-  color:#e4eaff; 
-  opacity:.95; 
-  font-weight:500 
-}
-
-/* book */
-.book-wrap{ 
-  position:relative; 
-  width:min(520px, 90%); 
-  aspect-ratio: 1 / 0.78; 
-}
-
-.book-glow{
-  position:absolute; 
-  inset:-12% -8% -8% -8%; z-index:0;
-  background:radial-gradient(closest-side, rgba(22,47,41,.75), transparent 70%);
-  opacity:.9; 
-  filter: blur(40px); 
+.book-glow {
+  position: absolute;
+  inset: -12% -8% -8% -8%;
+  z-index: 0;
+  background: radial-gradient(closest-side, rgba(22, 47, 41, 0.75), transparent 70%);
+  opacity: 0.9;
+  filter: blur(40px);
   animation: pulse 4.5s ease-in-out infinite;
 }
-
-@keyframes pulse{ 
-  0%,100%{ opacity:.7; transform:scale(.98) } 
-  50%{ opacity:1; transform:scale(1.03) } 
+.book-img {
+  position: relative;
+  z-index: 1;
+  width: clamp(20rem, 50vw, 38rem);
+  height: clamp(20rem, 50vw, 38rem);
+  object-fit: contain;
+  border-radius: 1rem;
+  margin-top: -4rem;
 }
 
-.book-img{ 
-  position:relative; 
-  z-index:1; 
-  width:38rem; 
-  height:38rem; 
-  object-fit:contain; 
-  border-radius:16px; 
-  margin-top:-4rem; 
+/* =========================================
+   COINS
+   ========================================= */
+.coin {
+  position: absolute;
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  opacity: 0.8;
+  filter: blur(0.4px);
+  display: grid;
+  place-items: center;
+  animation: float 12s ease-in-out infinite;
+}
+.coin img { width: 100px; }
+
+.c1 { left: 6%;  top: 60%; animation-delay: 0s; }
+.c2 { left: 10%; top: -5%; width: 72px; animation-delay: 1.2s; z-index: 2; }
+.c3 { right: -6%; top: 24%; width: 96px; animation-delay: 0.6s; opacity: 0.8; }
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; transform: scale(0.98); }
+  50%      { opacity: 1;   transform: scale(1.03); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-18px); }
 }
 
-/* coins */
-.coin{ 
-  position:absolute; 
-  width:30px; 
-  aspect-ratio:1/1; 
-  opacity:.8; 
-  filter: blur(.4px); 
-  display:grid; 
-  place-items:center; 
-  animation: float 12s ease-in-out infinite; 
-}
-.coin img{ width:100px; }
-
-@keyframes float{ 
-  0%,100%{ transform:translateY(0) } 
-  50%{ transform:translateY(-18px) } 
-}
-
-.c1{ left:6%; top:60%; animation-delay:0s }
-.c2{ left:10%; top:-5%; width:72px; animation-delay:1.2s; z-index: 2; }
-.c3{ right:-6%; top:24%; width:96px; animation-delay:.6s; opacity:.8 }
-
-/* navbar */
-.navbar{
-  position: fixed; 
-  top:2em; 
-  left:20em; 
-  right:2em; 
-  width:50%; 
-  height:50px;
-  display:flex; 
-  align-items:center; 
-  justify-content:space-between;
-  padding:1px 20px; 
-  z-index:1000; 
-  border-radius:10em;
-  backdrop-filter: blur(12px) saturate(125%); 
-  -webkit-backdrop-filter: blur(12px) saturate(125%);
-  background: rgba(10, 8, 20, .20);
-  border: 1.5px solid rgb(255, 255, 255);
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
-
-.nav-image img{ 
-  width: 32px; 
-  height: 32px; 
-  margin-top: 8px; 
-}
-
-.nav-brand{ 
-  font-weight:600; 
-  font-size: clamp(18px, 2.2vw, 24px); 
-  letter-spacing:.2px; 
-  color:#fff; 
-  text-decoration:none; 
-  line-height:1; 
-  margin-left: -19rem;
-}
-
-.nav-cta{
-  display:inline-flex; 
-  align-items:center; 
-  gap:.5rem; 
-  padding:12px 18px;
-  border-radius:999px; 
-  text-decoration:none; 
-  font-weight:800; 
-  color:#201a29;
-  font-family:"Times New Romans", serif; 
-  height:5px;
-  background: linear-gradient(135deg,var(--pill-start),var(--pill-end));
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-}
-
-.nav-cta:active{ transform: translateY(-1px); }
-
-/* anchor offset */
-.dashboard-page .wrap{ padding-top:112px; }
-.dashboard-page [id]{ scroll-margin-top:96px; }
-
-/* responsive */
-@media (max-width: 960px){
-  .wrap{ grid-template-columns:1fr; padding:24px 18px 80px; }
-  .right{ order:-1; margin-top:30px }
-  .book-wrap{ margin:0 auto; width:min(460px, 92%) }
-  .buttons{ max-width:640px }
-  .navbar{ height:64px; padding:0 14px; left:1rem; right:1rem; width:auto; }
-  .dashboard-page .wrap{ padding-top:96px; }
-}
-
-/* reduced motion */
-@media (prefers-reduced-motion: reduce){
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
   .dashboard-page { transition: none !important; }
   .coin, .book-glow { animation: none !important; }
 }
 
-/* =========================================================
-   PHONES + iPAD/TABLETS (≤1024px): stacked, overlay buttons,
-   book bigger + slightly faded, coins hidden
-   ========================================================= */
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+/* ≥960px: desktop padding & grid */
+@media (min-width: 960px) {
+  .wrap {
+    grid-template-columns: 1.05fr 0.95fr;
+    padding: clamp(120px, 12vw + 32px, 160px) 24px 96px;
+  }
+  .left { padding-top: 0; }
+}
+
+/* ≤1024px: hide coins, compact UI */
 @media (max-width: 1024px) {
-  .wrap { 
-    grid-template-columns: 1fr; 
-    padding: 20px 16px 60px; 
-  }
+  .coin { display: none !important; }
+  .book-wrap { width: min(95%, 32.5rem); opacity: 0.6; margin: 0 auto; }
+  .book-img { margin-top: 0; }
+  .buttons { position: static; width: 100%; gap: 1.4rem; margin-top: var(--space-6); }
+  .navbar__inner { height: 3.25rem; padding: 0 var(--space-4); }
+  .nav-cta { display: none; }
+}
 
-  .right { 
-    order: -1; 
-    margin-top: 24px; 
-    position: relative;
-  }
+/* ≤600px: phone navbar & overlay layout */
+@media (max-width: 600px) {
+  .navbar { top: 1.5rem; left: 1rem; right: 1rem; width: auto; }
+  .navbar__inner { width: 100%; justify-content: center; }
+  .nav-brand { margin: 0 auto; }
+  .nav-cta { display: none; }
 
-  /* book as backdrop (bigger + slight fade) */
-  .book-wrap {
-    position: relative;
-    z-index: 0;
-    width: min(95%, 520px);     /* bigger than before */
-    opacity: 0.6;               /* subtle fade */
-    margin: 0 auto;
-  }
-  .book-img { 
-    width: 100%; 
-    height: auto; 
-    margin-top: 0; 
-    transform: rotate(0deg) !important; /* keep straight on mobile/tablets */
-    transform-origin: 50% 50%;
-  }
+  .wrap { position: relative; padding-top: 110px; padding-left: 20px; padding-right: 20px; }
+  .right { order: -1; }
 
-  /* buttons overlay the book, lowered a bit */
+  /* book as backdrop, buttons overlay */
+  .book-wrap { width: min(95%, 520px); opacity: 0.6; margin: 0 auto; z-index: 0; }
   .buttons {
     position: absolute;
-    top: 30%;                   /* was 20–25% → lower */
+    top: 24%; /* lifted slightly */
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
     width: 85%;
     max-width: 480px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
     gap: 1.4rem;
   }
-  .buttons a.glass-btn {
-    backdrop-filter: blur(10px) saturate(140%);
-    background: rgba(255,255,255,0.12);
-    border: 2px solid rgba(255,255,255,0.6);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* 370–430px: balance margins, avoid “touching right” */
+@media (min-width: 370px) and (max-width: 430px) {
+  .navbar { top: 1.6rem; left: 1rem; right: 1rem; width: auto; }
+  .wrap { padding-top: 118px; padding-bottom: 90px; padding-left: 16px; padding-right: 16px; }
+  .buttons {
+    position: absolute;
+    top: 24% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 84% !important;
+    max-width: 480px;
+    gap: 1rem;
+  }
+  .glass-btn { padding: 1.15rem; }
+  .glass-btn h3 { font-size: 1.5rem; }
+  .glass-btn p { font-size: 0.95rem; }
+}
+
+/* ≤380px: tighten card typography */
+@media (max-width: 380px) {
+  .glass-btn h3 { font-size: 1.25rem; }
+  .glass-btn p  { font-size: 0.875rem; }
+  .book-wrap    { width: min(90%, 26rem); }
+}
+
+/* ≤340px: iPhone 5 → SE — allow scroll, simplify flow */
+@media (max-width: 340px) {
+  body { overflow-y: auto; }
+  .dashboard-page { overflow: auto; }
+
+  .navbar { top: 1.25rem; left: 0.8rem; right: 0.8rem; width: auto; }
+  .navbar__inner { height: 3rem; padding: 0 0.85rem; }
+  .nav-brand { font-size: 0.95rem; }
+  .nav-image img { width: 1.6rem; height: 1.6rem; }
+
+  .wrap {
+    display: block;
+    padding: 104px 14px 18px;
+  }
+  .right { order: -1; }
+  .book-wrap { width: min(88%, 22rem); margin: 0 auto 10px; opacity: 0.6; }
+
+  .buttons {
+    position: static !important;
+    width: 94% !important;
+    max-width: 420px;
+    margin: 10px auto 24px;
+    gap: 0.85rem;
   }
 
-  /* hide ALL coins on phones + tablets */
-  .coin { display: none !important; }
+  .glass-btn { padding: 0.9rem; }
+  .glass-btn h3 { font-size: 1.15rem; }
+  .glass-btn p { font-size: 0.85rem; }
+}
 
-  /* compact navbar */
-  .navbar { 
-    top: 1rem; left: 1rem; right: 1rem;
-    width: auto; height: 56px; padding: 0 12px;
-  }
-  .nav-brand { 
-    margin-right: 130px
-    font-size: clamp(16px, 4vw, 20px); 
-  }
-  .nav-cta   { 
-    /* padding: 10px 14px; 
-    font-size: 14px;  */
-    display: none;
+/* 431–600px: balance + keep width safe */
+@media (min-width: 431px) and (max-width: 600px) {
+  .wrap { padding-top: 120px; padding-bottom: 96px; }
+  .buttons {
+    top: 25% !important;
+    width: 86% !important;
+    max-width: 560px;
   }
 }
 
-/* =========================================================
-   SMALL iPHONES tweaks
-   ========================================================= */
-@media only screen 
-  and (max-device-width: 375px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-  
-    .buttons h3 { 
-    font-size: 20px; 
-  }
-  
-  .buttons p  { 
-    font-size: 14px; 
-  }
+/* iPad mini / small tablets (portrait: 600–834px) */
+@media (min-width: 600px) and (max-width: 834px) and (orientation: portrait) {
+  .navbar { top: 1rem; left: 1rem; right: 1rem; width: auto; }
+  .navbar__inner { justify-content: center; width: 100%; }
+  .nav-cta { display: none; }
 
-  .nav-cta    { 
-    /* font-size: 13px; 
-    padding: 8px 12px;  */
-    display: none;
+  .wrap { position: relative; padding-top: 120px; }
+  .right { order: -1; }
+  .book-wrap { width: min(92%, 520px); margin: 0 auto; opacity: 0.65; z-index: 0; }
+  .buttons {
+    position: absolute; top: 26% !important; left: 50%; transform: translateX(-50%);
+    width: 86%; max-width: 520px; z-index: 5; gap: 1.25rem;
   }
 }
 
-/* =========================================================
-   LARGE iPHONES tweaks
-   ========================================================= */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 896px) 
-  and (-webkit-min-device-pixel-ratio: 3) {
-  .buttons { gap: 1.8rem; }
-  .navbar  { height: 60px; }
-}
+/* iPad Air / Pro 11 (portrait: 835–1024px) */
+@media (min-width: 835px) and (max-width: 1024px) and (orientation: portrait) {
+  .navbar { top: 1.25rem; left: 1.25rem; right: 1.25rem; width: auto; }
+  .navbar__inner { justify-content: center; width: 100%; }
+  .nav-cta { display: none; }
 
-/* =========================================================
-   SAMSUNG / PIXEL mid widths (fine text tuning)
-   ========================================================= */
-@media (min-width: 360px) and (max-width: 420px) {
-  .nav-brand { 
-    font-size: 18px; 
-    margin-right: 130px;
-  }
-  
-  .nav-cta   { 
-    /* font-size: 14px; 
-    padding: 9px 14px; */
-    display: none;
+  .wrap { position: relative; padding-top: 128px; }
+  .right { order: -1; }
+  .book-wrap { width: min(88%, 560px); margin: 0 auto; opacity: 0.6; }
+  .buttons {
+    position: absolute; top: 27% !important; left: 50%; transform: translateX(-50%);
+    width: 80%; max-width: 560px; z-index: 5; gap: 1.4rem;
   }
 }
 
-/* =========================================================
-   DESKTOP SAFETY (≥1025px): fully normal
-   ========================================================= */
+/* narrow tall portrait (700–900px) */
+@media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
+  .navbar { left: 1.25rem; right: 1.25rem; width: auto; }
+  .navbar__inner { justify-content: center; width: 100%; }
+  .nav-cta { display: none; }
+
+  .wrap { position: relative; padding-top: 124px; }
+  .right { order: -1; }
+  .book-wrap { width: min(86%, 540px); margin: 0 auto; opacity: 0.62; }
+  .buttons {
+    position: absolute; top: 29%; left: 50%; transform: translateX(-50%);
+    width: 82%; max-width: 540px; gap: 1.3rem;
+  }
+}
+
+/* iPads & mid tablets (768–1024px landscape/others) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .right {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .book-wrap { margin: 0 0 100px 120px; width: min(90%, 520px); opacity: 0.65; z-index: 0; }
+  .buttons {
+    position: absolute; top: 30%; left: 50%; transform: translateX(-50%);
+    width: 85%; max-width: 500px; z-index: 5;
+  }
+}
+
+/* ≥1025px: desktop tweaks */
 @media (min-width: 1025px) {
-  .book-wrap { opacity: 1; transform: none; }
-  .buttons   { position: static; transform: none; z-index: auto; }
-  .coin      { display: grid; }
+  .left { padding-top: 0 !important; margin-top: -12px; }
+  .buttons { margin-top: 0 !important; }
 }
 
-@media (min-width: 350px) and (max-width: 390px) {
-  .nav-brand { 
-    font-size: 18px; 
-    margin-right: 4rem;
-  }
-  
-  .nav-cta   { 
-    /* font-size: 14px; 
-    padding: 9px 14px; */
-    display: none;
-  }
-
-  .nav-image{
-    margin-left: 2rem;
-    margin-bottom: 0.3rem;
-  }
+/* navbar vertical offset adjustments */
+@media (min-width: 960px) {
+  .navbar { top: 3.2rem; } /* was ~2rem */
 }
 
-@media (min-width: 390px) and (max-width: 420px) {
-  .nav-brand { 
-    font-size: 18px; 
-    margin-right: 5rem;
-  }
-  
-  .nav-cta   { 
-    /* font-size: 14px; 
-    padding: 9px 14px; */
-    display: none;
+/* ===== iPhone 5 / SE rescue (≤320–340px wide) ===== */
+@media (max-width: 340px) {
+  /* allow the page to scroll and stop the fixed full-screen trap */
+  html, body { height: auto; }
+  body       { overflow-y: auto; }
+
+  /* the big one: stop pinning everything to the viewport */
+  .dashboard-page {
+    position: static;       /* was fixed */
+    min-height: auto;
+    overflow: visible;      /* let content breathe */
   }
 
-  .nav-image{
-    margin-left: 3rem;
-    margin-bottom: 0.3rem;
+  /* navbar: full-width pill, no clipping */
+  .navbar {
+    position: sticky;       /* scrolls with the page */
+    top: 0.6rem;
+    left: 0.6rem;
+    right: 0.6rem;
+    width: auto;
+    z-index: 1000;
   }
-}
+  .navbar__inner {
+    height: 2.75rem;
+    padding: 0 .7rem;
+    justify-content: center;
+    width: 100%;
+  }
+  .nav-brand { font-size: .9rem; }
+  .nav-image img { width: 1.4rem; height: 1.4rem; }
+  .nav-cta { display: none !important; }
 
-@media (min-width: 420px) and (max-width: 440px) {
-  .nav-brand { 
-    font-size: 18px; 
-    margin-right: 5.5rem;
+  /* layout: drop the grid → single column flow */
+  .wrap {
+    display: block;         /* was grid */
+    padding: 80px 12px 16px;/* less top/side padding on tiny screens */
+    min-height: auto;
   }
-  
-  .nav-cta   { 
-    /* font-size: 14px; 
-    padding: 9px 14px; */
-    display: none;
+  .right { order: -1; }
+
+  /* book: smaller and not behind content */
+  .book-wrap { width: 88%; margin: 0 auto 8px; opacity: .6; }
+  .book-img  { margin-top: 0; }
+
+  /* buttons: NO absolute positioning on small phones */
+  .buttons{
+    position: static !important;
+    width: 100% !important;
+    max-width: 240px;
+    margin: 5px auto 20px auto;
+    gap: .8rem;
+    transform: none !important;
+    left: auto !important; 
+    top: auto !important;
   }
 
-  .nav-image{
-    margin-left: 3rem;
-    margin-bottom: 0.35rem;
-  }
-}
+  /* card sizing */
+  .glass-btn { padding: .9rem; border-radius: .8rem; }
+  .glass-btn h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+  .glass-btn p  { font-size: .82rem; }
 
-@media (min-width: 440px) and (max-width: 770px) {
- .nav-image{
-  margin-left: 14rem;
-  margin-bottom: 0.5rem;
- }
-  
-  .nav-brand { 
-    font-size: 18px; 
-    margin-right: 16rem;
-  }
-  
-  .nav-cta   { 
-    display: none;
-  }
-}
-
-@media (min-width: 771px) and (max-width: 932px) {
- .nav-image{
-  margin-left: 18rem;
-  margin-bottom: 0.5rem;
- }
-  
-  .nav-brand { 
-    font-size: 18px; 
-    margin-right: 22rem;
-  }
-  
-  .nav-cta   { 
-    /* font-size: 14px; 
-    padding: 9px 14px; */
-    display: none;
-  }
-}
-
-@media (min-width: 932px) and (max-width: 1024px) {
- .nav-image{
-  margin-left: 22em;
-  margin-bottom: 0.5em;
- }
-  
-  .nav-brand { 
-    font-size: 18px; 
-    margin-right: 22em;
-  }
-  
-  .nav-cta   { 
-    /* font-size: 14px; 
-    padding: 9px 14px; */
-    display: none;
-  }
+  /* hide floating coins to avoid overlap */
+  .coin { display: none !important; }
 }

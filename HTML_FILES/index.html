@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Book of Trillions</title>
-  <link rel="stylesheet" href="CSS_FILES/style.css"/>
+  <link rel="stylesheet" href="CSS_FILES/style.css" />
 
   <!-- libs (kept) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
+
 <body>
   <!-- Dashboard Page -->
   <div id="dashboard-page" class="dashboard-page visible">
-    <header class="navbar">
-      <div class="nav-image">
-        <img src="images/green-1 (1).png" alt="">
+    <header class="navbar" role="navigation" aria-label="Main">
+      <div class="navbar__inner">
+        <a href="#" class="nav-brand">
+          <span class="nav-image">
+            <img src="images/green-1 (1).png" alt="Logo" />
+          </span>
+          Book of Trillions
+        </a>
+        <a class="nav-cta" href="#get-started">GET STARTED</a>
       </div>
-      <a href="#" class="nav-brand">Book of Trillions</a>
-      <a class="nav-cta" href="#get-started">GET STARTED</a>
     </header>
 
     <main class="wrap" id="get-started">
       <section class="left">
-        <nav class="buttons">
+        <nav class="buttons" aria-label="Primary">
           <a class="glass-btn" href="edu.html">
             <h3>Plasma Education</h3>
             <p>Your gateway to Plasma Blockchain</p>
@@ -32,19 +37,24 @@
             <h3>Plasma Dune Dashboard</h3>
             <p>Statistics &amp; analytics on Stablecoin plasma</p>
           </a>
+          <a class="glass-btn" href="https://plasma-quiz-pi.vercel.app/" target="_blank">
+            <h3>Plasma Quiz</h3>
+            <p>Test your knowledge on Plasma</p>
+          </a>
+
         </nav>
       </section>
 
       <section class="right">
         <!-- Floating coins -->
-        <div class="coin c1"><img src="images/coinnnn-removebg-preview.png" alt=""></div>
-        <div class="coin c2"><img src="images/coinnnn-removebg-preview.png" alt=""></div>
-        <div class="coin c3"><img src="images/coinnnn-removebg-preview.png" alt=""></div>
+        <div class="coin c1"><img src="images/coinnnn-removebg-preview.png" alt="" /></div>
+        <div class="coin c2"><img src="images/coinnnn-removebg-preview.png" alt="" /></div>
+        <div class="coin c3"><img src="images/coinnnn-removebg-preview.png" alt="" /></div>
 
         <!-- Book image -->
         <div class="book-wrap">
           <div class="book-glow"></div>
-          <img src="images/photo_2025-08-09_18-19-43-removebg-preview.png" alt="Book of Trillions" class="book-img">
+          <img src="images/photo_2025-08-09_18-19-43-removebg-preview.png" alt="Book of Trillions" class="book-img" />
         </div>
       </section>
     </main>

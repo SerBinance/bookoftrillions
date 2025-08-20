@@ -32,48 +32,73 @@ body{
     color: var(--text);
 }
 
+
+/* ==============================
+   TOPBAR (Header)
+   ============================== */
 .topbar{
-    position:sticky; 
-    top:0; 
-    z-index:10;
-    background: #9e8e6d;
-    border-bottom: 2px solid #9e8e6d;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #2F6558;
+  border-bottom: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-
 .topbar .wrap{
-    max-width:1200px; margin:0 auto; padding:14px 18px;
-    display:flex; align-items:center; gap:16px;
+  max-width:1200px;
+  margin:0 auto;
+  padding: 12px 18px;
+  display:flex;
+  align-items:center;
+  gap:16px;
 }
 
+/* Brand (link) */
 .brand{
-    font-weight:700; 
-    font-size:22px; 
-    letter-spacing:.2px;
-    margin-right: 150px;
+  display:flex; align-items:center; gap:10px;
+  font-weight:800; font-size:22px; letter-spacing:.2px;
+  margin-right:150px;         /* desktop spacing only; overridden on smaller screens */
+  color:#fff; text-decoration:none;
+}
+.brand:hover{ text-decoration:none; }
+
+.logo{ height:28px; width:auto; }
+
+/* Desktop inline menu (right side) */
+.menu-inline{
+  margin-left:auto;
+  display:flex; align-items:center; gap:24px;
+}
+.menu-inline .nav-link{
+  text-decoration:none; font-weight:700; color:#fff;
 }
 
-.brand1{
-    font-weight:600; 
-    font-size:20px; 
-    letter-spacing:.2px;
-    margin-right: 40px;
-    color: #000;
+/* Hamburger (hidden on desktop by default) */
+.menu-toggle{
+  display:none;
+  margin-left:auto;
+  background:none; border:none; color:#fff;
+  font-size:26px; line-height:1; cursor:pointer;
 }
 
-#brand1{
-  text-decoration: none;
+/* Dropdown panel for mobile/tablet */
+.menu-panel{
+  display:none;
+  position:absolute; top:100%; right:18px; margin-top:8px;
+  background:#fff; color:#111;
+  border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,.18);
+  padding:12px; min-width:260px; z-index:20;
+}
+.menu-panel.open{ display:block; }
+.menu-item{
+  display:block; padding:10px 12px; border-radius:8px;
+  text-decoration:none; color:#111; font-weight:600;
+}
+.menu-item:hover{ background:#f4f6f8; }
+.menu-divider{ height:1px; background:#eceff3; margin:8px 0 10px; 
 }
 
-.brand2{
-    font-weight:600; 
-    font-size:20px; 
-    letter-spacing:.2px;
-    color: #000;
-}
 
-#brand2{
-  text-decoration: none;
-}
 
 .dune-container {
     width: 95%;
@@ -91,169 +116,46 @@ body{
     display: block;
 }
 
-/* --------------------------------------------
-   UNIVERSAL MOBILE IMPROVEMENTS (ALL DEVICES)
----------------------------------------------*/
-:root{
-  /* fallback if env() unsupported */
-  --safe-top: 0px;
-  --safe-bottom: 0px;
+
+/* ---------- Tablets (769–1024px) ---------- */
+@media (min-width: 769px) and (max-width: 1024px){
+  .menu-inline{ display:none; }
+  .menu-toggle{ display:block; }
+  .topbar .wrap{ padding:12px 22px; gap:16px; justify-content:space-between; }
+  .brand{ margin-right:0 !important; white-space:nowrap; font-size:20px; }
+  .logo{ height:26px; }
 }
 
-@supports (padding: max(env(safe-area-inset-top), 0px)) {
-  :root{
-    --safe-top: env(safe-area-inset-top);
-    --safe-bottom: env(safe-area-inset-bottom);
-  }
+/* ---------- Phones: large (431–600px) ---------- */
+@media (min-width: 431px) and (max-width: 600px){
+  .menu-inline{ display:none; }
+  .menu-toggle{ display:block; }
+  .topbar .wrap{ padding:12px 22px; gap:18px; justify-content:space-between; }
+  .brand{ margin-right:0 !important; white-space:nowrap; font-size:19px; }
+  .logo{ height:26px; }
 }
 
-/* Let the container breathe under notches & bottom bars */
-body{
-  padding-top: 0; /* topbar is sticky; we push container instead */
-  padding-bottom: var(--safe-bottom);
+/* ---------- Phones: small–medium (361–430px) ---------- */
+@media (min-width: 361px) and (max-width: 430px){
+  .menu-inline{ display:none; }
+  .menu-toggle{ display:block; }
+  .topbar .wrap{ padding:12px 20px; gap:16px; justify-content:space-between; }
+  .brand{ margin-right:0 !important; white-space:nowrap; font-size:18px; }
+  .logo{ height:24px; }
 }
 
-/* Use small viewport units so mobile browser bars don’t chop height */
-.dune-container iframe{
-  height: 85svh; /* replaces 85vh on mobile safely */
-}
-
-/* Tighter nav spacing by default on smaller screens */
-.topbar .wrap{
-  padding: 12px 14px;
-  gap: 12px;
-}
-
-/* --------------------------------------------
-   DESKTOP → TABLET
----------------------------------------------*/
-@media (max-width: 1200px){
-  .topbar .wrap{ max-width: 100%; }
-  .brand{ margin-right: 80px; }
-  .brand1, .brand2{ font-size: 18px; }
-  .dune-container{ width: 96%; }
-}
-
-/* Large tablets / small laptops */
-@media (max-width: 992px){
-  .brand{ font-size: 20px; margin-right: 40px; }
-  .brand1, .brand2{ font-size: 17px; }
-  .dune-container{ width: 96%; }
-  .dune-container iframe{ height: 80svh; }
-}
-
-/* --------------------------------------------
-   PHONES (common Android & iPhone widths)
----------------------------------------------*/
-@media (max-width: 768px){
-  .topbar .wrap{
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .brand{ font-size: 18px; margin-right: 12px; }
-  .brand1, .brand2{
-    font-size: 16px;
-    margin-right: 12px;
-  }
-
-  .dune-container{
-    width: 98%;
-    margin: calc(12px + var(--safe-top)) auto 16px;
-    border-width: 1px;
-  }
-  .dune-container iframe{ height: 80svh; }
-}
-
-/* Small phones (360–430px logical width: many Androids & iPhone Mini/SE) */
-@media (max-width: 430px){
-  .brand{ font-size: 16px; }
-  .brand1, .brand2{ font-size: 15px; }
-  .topbar .wrap{ gap: 8px; }
-
-  /* prevent nav wrapping uglily; allow links to wrap nicely */
-  #brand1, #brand2{ white-space: nowrap; }
-
-  .dune-container{
-    width: 98%;
-    margin: calc(10px + var(--safe-top)) auto 12px;
-  }
-  .dune-container iframe{ height: 76svh; }
-}
-
-/* Extra small (<=360px) */
+/* ---------- Phones: super small (≤360px, e.g., iPhone SE) ---------- */
 @media (max-width: 360px){
-  .brand{ font-size: 15px; }
-  .brand1, .brand2{ font-size: 14px; }
-  .dune-container iframe{ height: 71svh; }
+  .menu-inline{ display:none; }
+  .menu-toggle{ display:block; }
+  .topbar .wrap{ padding:12px 18px; gap:14px; justify-content:space-between; }
+  .brand{ margin-right:0 !important; white-space:nowrap; font-size:17px; }
+  .logo{ height:22px; }
 }
 
-/* --------------------------------------------
-   iPHONE-SPECIFIC POLISH
-   (Safari/iOS safe-area + iOS-only @supports feature)
----------------------------------------------*/
-@supports (-webkit-touch-callout: none) {
-  /* iOS Safari hint */
-  .topbar{
-    padding-top: var(--safe-top);
-  }
-  .dune-container{
-    margin-top: calc(12px + var(--safe-top));
-  }
-  /* iOS has aggressive browser chrome; bias to svh a bit lower */
-  @media (max-width: 430px){
-    .dune-container iframe{ height: 72svh; }
-  }
+/* ---------- Desktop explicit (≥1025px) ---------- */
+@media (min-width: 1025px){
+  .menu-inline{ display:flex; }
+  .menu-toggle{ display:none; }
 }
-
-/* --------------------------------------------
-   ANDROID-COMMON WIDTH TWEAKS
-   (Pixel/Samsung/Tecno/Infinix typically 360–412–430 widths)
----------------------------------------------*/
-/* Tall Android screens (19.5:9, 20:9) benefit from a bit more iframe */
-@media (max-width: 430px) and (min-height: 700px){
-  .dune-container iframe{ height: 80svh; }
-}
-
-/* Shorter Android screens */
-@media (max-width: 412px) and (max-height: 700px){
-  .dune-container iframe{ height: 73svh; }
-}
-
-/* Make nav shrink instead of wrapping */
-@media (max-width: 768px){
-  .topbar .wrap{
-    flex-wrap: nowrap;         /* prevent stacking */
-    justify-content: space-between;
-    transform: scale(0.95);    /* zoom out slightly */
-    transform-origin: left;    /* zooms from left edge */
-  }
-}
-
-@media (max-width: 600px){
-  .topbar .wrap{
-    transform: scale(0.9);    
-  }
-}
-
-@media (max-width: 480px){
-  .topbar .wrap{
-    transform: scale(0.85);    
-  }
-}
-
-/* Phones only */
-@media (max-width: 768px){
-  .dune-container {
-    margin: 25px auto 6px;  /* top | left/right | bottom */
-  }
-}
-
-@media (max-width: 430px){
-  .dune-container {
-    margin: 28px auto 6px;  /* a bit more top space, less bottom */
-  }
-}
-
-
 
