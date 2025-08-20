@@ -100,17 +100,29 @@ body{
 /* ==============================
    SECTION / GRID
    ============================== */
+/* replace your current .section block with this */
 .section{
-  max-width:1200px;
-  margin:24px auto;
-  padding:0 18px;
+  max-width: 1200px;
+  margin-inline: auto;
+
+  /* equal left/right gutters, safe on iOS edges */
+  padding-left:  max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+
+  /* keep your vertical spacing */
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .grid{
-  display:grid;
-  grid-template-columns: repeat(5, 1fr); /* desktop default */
-  gap:22px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); /* desktop */
 }
+
+/* prevents long titles/images from widening a track */
+.grid > *{ min-width: 0; box-sizing: border-box; }
+
 .grid a{ text-decoration:none; display:block; }
 
 /* ==============================
@@ -181,7 +193,7 @@ body{
 /* ---------- Tablets (769–1024px) ---------- */
 @media (min-width: 769px) and (max-width: 1024px){
   /* Grid */
-  .grid{ grid-template-columns: repeat(3, 1fr); gap:14px; }
+  .grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap:14px; }
 
   /* Nav: hamburger instead of inline */
   .menu-inline{ display:none; }
@@ -204,7 +216,7 @@ body{
 
 /* ---------- Phones: large (431–600px) ---------- */
 @media (min-width: 431px) and (max-width: 600px){
-  .grid{ grid-template-columns: repeat(3, 1fr); gap:14px; }
+  grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap:14px; }
 
   .menu-inline{ display:none; }
   .menu-toggle{ display:block; }
@@ -222,7 +234,7 @@ body{
 
 /* ---------- Phones: small–medium (361–430px) ---------- */
 @media (min-width: 361px) and (max-width: 430px){
-  .grid{ grid-template-columns: repeat(3, 1fr); gap:12px; }
+  .grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap:12px; }
 
   .menu-inline{ display:none; }
   .menu-toggle{ display:block; }
@@ -240,7 +252,7 @@ body{
 
 /* ---------- Phones: super small (≤360px, e.g., iPhone SE) ---------- */
 @media (max-width: 360px){
-  .grid{ grid-template-columns: repeat(2, 1fr); gap:10px; }
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap:10px; }
 
   .menu-inline{ display:none; }
   .menu-toggle{ display:block; }
