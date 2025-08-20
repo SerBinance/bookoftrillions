@@ -186,27 +186,23 @@ body{
 .empty{ display:none; margin:32px 0; color:#777; }
 .empty.show{ display:block; }
 
-/* =========================================================
-   RESPONSIVE LAYERS (phones/tablets only where needed)
-   ========================================================= */
 
-/* ---------- Tablets (769–1024px) ---------- */
 @media (min-width: 769px) and (max-width: 1024px){
   /* Grid */
   .grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap:14px; }
 
-  /* Nav: hamburger instead of inline */
+  
   .menu-inline{ display:none; }
   .menu-toggle{ display:block; }
 
-  /* Topbar spacing */
+  
   .topbar .wrap{ padding:12px 22px; gap:16px; justify-content:space-between; }
 
-  /* Brand sizing */
+ 
   .brand{ margin-right:0 !important; white-space:nowrap; font-size:20px; }
   .logo{ height:26px; }
 
-  /* Cards: equal height & full text (scroll if overflow) */
+  
   .card{ height: var(--card-h); }
   .thumb{ height:62%; width:100%; object-fit:cover; aspect-ratio:auto; }
   .meta{ height:38%; min-height:0; overflow:auto; -webkit-overflow-scrolling:touch; }
