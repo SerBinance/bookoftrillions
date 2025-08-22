@@ -1,18 +1,16 @@
-/* ============================
-   1. Card Data
-   ============================ */
+// cards
 const cards = [
   {
     title: "Plasma Solution to Stablecoins Issues",
     sub: "𝕏 thread by Posh",
     href: "https://x.com/Poshthehussla/status/1929926980591325316",
-    img: "images/homepage_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Making Sense of PlasmaBFT",
     sub: "𝕏 Article by Eric",
     href: "https://x.com/ugbuericsam/status/1947965161765056779",
-    img: "images/silver_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Where Money Flows",
@@ -24,25 +22,25 @@ const cards = [
     title: "What is Plasma",
     sub: "Blog Post by blocmates",
     href: "https://www.blocmates.com/articles/what-is-plasma-chain",
-    img: "images/green_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Zaheer POV on plasma sales",
     sub: "News Report by SplitCapital",
     href: "https://x.com/SplitCapital/status/1949828558202785936?t=XBjyDQ4z_V5JXi58Kg8HAA&s=19",
-    img: "images/blue_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Stablecoins need a Layer",
     sub: "𝕏 thread by Bullish bunt",
     href: "https://x.com/bullish_bunt/status/1934208887013478400",
-    img: "images/homepage_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Zero Fee Chain",
     sub: "Article by Smooth",
     href: "https://console.pluid.com/article/plasma-the-zero-fee-chain-built-for-global-payments-ivdciie8vu",
-    img: "images/silver_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Biggest Opportunity in 2025",
@@ -54,19 +52,19 @@ const cards = [
     title: "What is Plasma Chain",
     sub: "Blog Post by blocmates",
     href: "https://www.blocmates.com/articles/what-is-plasma-chain",
-    img: "images/green_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Partnerships",
     sub: "News Report by PlasmaFDN",
     href: "https://x.com/PlasmaFDN/status/1953456721306820664",
-    img: "images/blue_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Stablecoins & Plasma",
     sub: "Article by PlasmaFDN",
     href: "https://www.plasma.to/insights/capturing-the-trillion-dollar-opportunity",
-    img: "images/silver_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "The Stablecoin market",
@@ -78,19 +76,17 @@ const cards = [
     title: "Current state of Plasma",
     sub: "Blog Post by Oluwapelumi",
     href: "https://cryptoslate.com/plasma-raises-500-million-partners-with-aave-to-transform-stablecoin-market/",
-    img: "images/green_book.png"
+    img: "images/brown_book.png"
   },
   {
     title: "Plasma Africa and Channel",
     sub: "News Report by SplitCapital",
     href: "https://x.com/PlasmaAfric/status/1954976629572374757",
-    img: "images/blue_book.png"
+    img: "images/brown_book.png"
   }
 ];
 
-/* ============================
-   2. Render Cards
-   ============================ */
+// render cards
 function renderCards(list) {
   const grid = document.getElementById('grid');
   if (!grid) return;
@@ -116,9 +112,7 @@ function renderCards(list) {
 
 renderCards(cards);
 
-/* ============================
-   3. Search & Filter
-   ============================ */
+// search bar filter
 const input = document.getElementById('searchInput');
 const empty = document.getElementById('empty');
 
@@ -197,11 +191,11 @@ if (toggleBtn && panel) {
   });
 }
 
-/* ======= WIRE MOBILE SEARCH TOO ======= */
+
 const inputDesktop = document.getElementById('searchInput');
 const inputMobile  = document.getElementById('searchInputMobile');
 
-// reuse your existing debounce/runFilter from earlier in edu.js
+
 if (typeof debounce === 'function' && typeof runFilter === 'function') {
   if (inputMobile) {
     const onInputMobile = debounce(runFilter, 100);
@@ -215,12 +209,24 @@ if (typeof debounce === 'function' && typeof runFilter === 'function') {
     });
   }
 
-  // keep values in sync (optional but neat)
+  
   if (inputDesktop && inputMobile) {
     const sync = (from, to) => from.addEventListener('input', () => { to.value = from.value; });
     sync(inputDesktop, inputMobile);
     sync(inputMobile, inputDesktop);
   }
 }
+
+
+const levelBtn = document.querySelector('.nav-dropdown .has-caret');
+const levelPanel = document.querySelector('.nav-dropdown .dropdown-panel');
+
+if (levelBtn && levelPanel) {
+  levelBtn.addEventListener('focus', () => levelBtn.setAttribute('aria-expanded', 'true'));
+  levelBtn.addEventListener('blur',  () => levelBtn.setAttribute('aria-expanded', 'false'));
+  levelBtn.addEventListener('mouseenter', () => levelBtn.setAttribute('aria-expanded', 'true'));
+  levelBtn.addEventListener('mouseleave', () => levelBtn.setAttribute('aria-expanded', 'false'));
+}
+
 
 

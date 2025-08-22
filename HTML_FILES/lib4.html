@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GENIUS act</title>
+  <link rel="stylesheet" href="CSS_FILES/lib4.css" />
+</head>
+<body>
+  
+  <header class="topbar">
+    <div class="wrap">
+      
+      <a href="index.html" class="brand" aria-label="Home">
+        GENIUS act  
+      </a>
+
+      
+      <nav class="menu-inline" aria-label="Primary">
+        
+        <div class="nav-dropdown">
+          <button class="nav-link has-caret" aria-haspopup="true" aria-expanded="false">
+            Level
+          </button>
+          <div class="dropdown-panel" role="menu">
+            <a class="dropdown-item" role="menuitem" href="lib1.html">Stablecoin (beginner)</a>
+            <a class="dropdown-item" role="menuitem" href="lib2.html">Stablecoin (intermediate)</a>
+            <a class="dropdown-item" role="menuitem" href="lib3.html">Plasma Education</a>
+          </div>
+        </div>
+
+        <a href="https://dune.com/xxvii/trillions" class="nav-link" target="_blank" rel="noopener noreferrer">  Stablecoin Analytics</a>
+        <a href="https://plasma-quiz-pi.vercel.app/" class="nav-link" target="_blank" rel="noopener noreferrer">TAC Quiz</a>
+      </nav>
+
+      
+      <div class="search-wrap search-desktop" aria-label="Search">
+        <span class="search-icon">🔎</span>
+        <input id="searchInput" class="search" type="search" placeholder="Search here" autocomplete="off" />
+      </div>
+
+      
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel">☰</button>
+
+      
+      <div id="menu-panel" class="menu-panel" role="menu" aria-hidden="true">
+        <a href="https://dune.com/xxvii/trillions" class="menu-item" role="menuitem" target="_blank">Stablecoin Analytics</a>
+        <a href="https://plasma-quiz-pi.vercel.app/" class="menu-item" role="menuitem" target="_blank" rel="noopener noreferrer">TAC Quiz</a>
+
+        <a href="lib1.html" class="menu-item" role="menuitem">Stablecoin (beginner)</a>
+        <a href="lib2.html" class="menu-item" role="menuitem">Stablecoin (intermediate)</a>
+        <a href="lib3.html" class="menu-item" role="menuitem">Plasma Education</a>
+        <div class="menu-divider"></div>
+
+
+        <div class="menu-divider"></div>
+
+        <div class="search-wrap mobile" aria-label="Search">
+          <span class="search-icon">🔎</span>
+          <input id="searchInputMobile" class="search" type="search" placeholder="Search here" autocomplete="off" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+  <main class="section">
+    <div id="grid" class="grid" aria-live="polite"></div>
+    <p id="empty" class="empty">No matches. Try another word.</p>
+  </main>
+
+  <script src="JS_FILES/lib4.js"></script>
+</body>
+</html>
