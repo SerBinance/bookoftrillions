@@ -1,69 +1,69 @@
 // cards
 const cards = [
   {
-    title: "Plasma Solution to Stablecoins Issues",
-    sub: "𝕏 thread by Posh",
-    href: "https://x.com/Poshthehussla/status/1929926980591325316",
+    title: "Stablecoins 101",
+    sub: "Blog by chainalysis",
+    href: "https://www.chainalysis.com/blog/stablecoins-most-popular-asset",
     img: "images/blue_book.png"
   },
   {
-    title: "Making Sense of PlasmaBFT",
-    sub: "𝕏 Article by Eric",
-    href: "https://x.com/ugbuericsam/status/1947965161765056779",
+    title: "A beginner's guide on how to buy stablecoins",
+    sub: "𝕏 post by BINANCE",
+    href: "https://x.com/binance/status/1887622585828983027",
     img: "images/blue_book.png"
   },
   {
-    title: "Where Money Flows",
-    sub: "Article by Plasma",
-    href: "https://plasma.beehiiv.com/p/where-money-moves-edition-10",
+    title: "Stablecoins: Definition and Types",
+    sub: "Article by investopedia",
+    href: "https://www.investopedia.com/terms/s/stablecoin.asp",
     img: "images/blue_book.png"
   },
   {
-    title: "What is Plasma",
-    sub: "Blog Post by blocmates",
-    href: "https://www.blocmates.com/articles/what-is-plasma-chain",
+    title: "Stablecoins, Explained in 4mins",
+    sub: "Youtube video by BINANCE",
+    href: "https://youtu.be/vx_JyxuV1DE?si=wVOT4vwIJMtXKxwY",
     img: "images/blue_book.png"
   },
   {
-    title: "Zaheer POV on plasma sales",
-    sub: "News Report by SplitCapital",
-    href: "https://x.com/SplitCapital/status/1949828558202785936?t=XBjyDQ4z_V5JXi58Kg8HAA&s=19",
+    title: "What are Stablecoins?",
+    sub: "Blog by Tokenmetrics",
+    href: "https://www.tokenmetrics.com/blog/stablecoins",
     img: "images/blue_book.png"
   },
   {
-    title: "Stablecoins need a Layer",
-    sub: "𝕏 thread by Bullish bunt",
-    href: "https://x.com/bullish_bunt/status/1934208887013478400",
+    title: "A Beginner's Guide To Stablecoins",
+    sub: " Blog by bitwave",
+    href: "https://www.bitwave.io/blog/what-are-stablecoins",
     img: "images/blue_book.png"
   },
   {
-    title: "Zero Fee Chain",
-    sub: "Article by Smooth",
-    href: "https://console.pluid.com/article/plasma-the-zero-fee-chain-built-for-global-payments-ivdciie8vu",
+    title: "TD:RL on stablecoins",
+    sub: "Article by NOTES",
+    href: "https://notes.mtb.xyz/p/stablecoins-1000-words",
     img: "images/blue_book.png"
   },
   {
-    title: "Biggest Opportunity in 2025",
-    sub: "Youtube by Degen Investor",
-    href: "https://youtu.be/da5J8UQ2Jdk?si=Km1L5iYzY8BKLBoA",
+    title: "A guide to stablecoins",
+    sub: "Article by a16zcrypto",
+    href: "https://a16zcrypto.com/posts/article/stablecoin-guide-what-why-how/",
     img: "images/blue_book.png"
   },
   {
-    title: "What is Plasma Chain",
-    sub: "Blog Post by blocmates",
-    href: "https://www.blocmates.com/articles/what-is-plasma-chain",
+    title: "Understanding yield & Non yield bearing stablecoins",
+    sub: "𝕏 post by NEMI",
+    href: "https://x.com/nemi_0x/status/1897677957298356571?s=46",
     img: "images/blue_book.png"
   },
   {
-    title: "Partnerships",
-    sub: "News Report by PlasmaFDN",
-    href: "https://x.com/PlasmaFDN/status/1953456721306820664",
+    title: "How to buy stablecoins",
+    sub: "Youtube Video by CRYPTOBASICS",
+    href: "https://youtu.be/KIxhyYb4cpk?si=C6XB8QJKMAILRflL",
     img: "images/blue_book.png"
   },
   {
-    title: "Stablecoins & Plasma",
-    sub: "Article by PlasmaFDN",
-    href: "https://www.plasma.to/insights/capturing-the-trillion-dollar-opportunity",
+    title: "USDC and USDT explainer in 5mins",
+    sub: "Blog by BVNK",
+    href: "https://www.bvnk.com/blog/usdc-vs-usdt",
     img: "images/blue_book.png"
   },
   {
@@ -73,21 +73,21 @@ const cards = [
     img: "images/blue_book.png"
   },
   {
-    title: "Current state of Plasma",
-    sub: "Blog Post by Oluwapelumi",
-    href: "https://cryptoslate.com/plasma-raises-500-million-partners-with-aave-to-transform-stablecoin-market/",
+    title: "Understanding cross border payments",
+    sub: "Blog Post by TEJUADEYINKA",
+    href: "https://tejuadeyinka.medium.com/on-stablecoins-and-cross-border-payments-c9dda1c32e2e",
     img: "images/blue_book.png"
   },
   {
-    title: "Plasma Africa and Channel",
-    sub: "News Report by SplitCapital",
-    href: "https://x.com/PlasmaAfric/status/1954976629572374757",
+    title: "Benefits of stablecoins to users",
+    sub: "Article by AV.SC",
+    href: "https://av.sc.com/corp-en/nr/content/docs/sc-stablecoins-the-first-killer-app.pdf",
     img: "images/blue_book.png"
   },
   {
-    title: "Plasma Africa and Channel",
-    sub: "News Report by SplitCapital",
-    href: "https://x.com/PlasmaAfric/status/1954976629572374757",
+    title: "How different types of stablecoins work",
+    sub: "Article by DEATHEREUM",
+    href: "https://deathereum.substack.com/p/chasing-stability-a-stablecoin-deepdive",
     img: "images/blue_book.png"
   }
 ];
