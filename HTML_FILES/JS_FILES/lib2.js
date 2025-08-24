@@ -119,7 +119,7 @@ const cards = [
     sub: "News by PYMNTS",
     href: "https://www.pymnts.com/news/b2b-payments/2025/what-a-b2b-stablecoin-strategy-looks-like/",
     img: "images/green_book.png"
-  },
+  }
 ];
 
 // render cards

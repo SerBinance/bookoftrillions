@@ -119,7 +119,7 @@ const cards = [
     sub: "Blog by PRIVY",
     href: "https://privy.io/blog/onchain-payment",
     img: "images/blue_book.png"
-  },
+  }
 
 ];
 
