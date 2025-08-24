@@ -1,89 +1,125 @@
 // cards
 const cards = [
   {
-    title: "Plasma Solution to Stablecoins Issues",
-    sub: "𝕏 thread by Posh",
-    href: "https://x.com/Poshthehussla/status/1929926980591325316",
+    title: "Wyoming Just Launched the First State-Backed Stablecoin",
+    sub:  "Article by CCN",
+    href: "https://www.ccn.com/education/crypto/wyoming-frnt-state-stablecoin-visa-explained",
     img: "images/green_book.png"
   },
   {
-    title: "Making Sense of PlasmaBFT",
-    sub: "𝕏 Article by Eric",
-    href: "https://x.com/ugbuericsam/status/1947965161765056779",
+    title: "Leading blockchain protocols for stablecoins",
+    sub: "Blog by SQUADS",
+    href: "https://squads.so/blog/solana-base-stablecoin-payments",
     img: "images/green_book.png"
   },
   {
-    title: "Where Money Flows",
-    sub: "Article by Plasma",
-    href: "https://plasma.beehiiv.com/p/where-money-moves-edition-10",
+    title: "Global regulation overview by PWC",
+    sub: "Article by PWC",
+    href: "https://legal.pwc.de/en/services/pwc-legals-eu-regulatory-compliance-operations/pwcs-global-crypto-regulation-report",
     img: "images/green_book.png"
   },
   {
-    title: "What is Plasma",
-    sub: "Blog Post by blocmates",
-    href: "https://www.blocmates.com/articles/what-is-plasma-chain",
+    title: "State of stablecoins",
+    sub: "Report by DUNE",
+    href: "https://dune.com/stablecoin-download",
     img: "images/green_book.png"
   },
   {
-    title: "Zaheer POV on plasma sales",
-    sub: "News Report by SplitCapital",
-    href: "https://x.com/SplitCapital/status/1949828558202785936?t=XBjyDQ4z_V5JXi58Kg8HAA&s=19",
+    title: "Stablecoins Payment landscape",
+    sub: "Article by HANDICK",
+    href: "https://medium.com/@HadickM/stablecoin-payments-who-actually-wins-ebd72a1cc8b3",
     img: "images/green_book.png"
   },
   {
-    title: "Stablecoins need a Layer",
-    sub: "𝕏 thread by Bullish bunt",
-    href: "https://x.com/bullish_bunt/status/1934208887013478400",
+    title: "Stablecoin regulation and the singleness of money",
+    sub: "News by KCL.NEWS",
+    href: "https://www.kcl.ac.uk/news/stablecoin-regulation-and-the-singleness-of-money",
     img: "images/green_book.png"
   },
   {
-    title: "Zero Fee Chain",
-    sub: "Article by Smooth",
-    href: "https://console.pluid.com/article/plasma-the-zero-fee-chain-built-for-global-payments-ivdciie8vu",
+    title: "Understanding US regulations on stablecoins",
+    sub: "Blog by BITWAVE",
+    href: "https://www.bitwave.io/blog/sab-122-a-new-dawn-for-banks-and-digital-assets",
     img: "images/green_book.png"
   },
   {
-    title: "Biggest Opportunity in 2025",
-    sub: "Youtube by Degen Investor",
-    href: "https://youtu.be/da5J8UQ2Jdk?si=Km1L5iYzY8BKLBoA",
+    title: "Understanding European Crypto Assets Regulation",
+    sub: "Article by AMICERTIFICATION",
+    href: "https://amlcertification.com/understanding-european-crypto-assets-regulation-mica/",
     img: "images/green_book.png"
   },
   {
-    title: "What is Plasma Chain",
-    sub: "Blog Post by blocmates",
-    href: "https://www.blocmates.com/articles/what-is-plasma-chain",
+    title: "Europes MICA Regime: Crypto Payments",
+    sub: "Blog Post by BVNK",
+    href: "https://www.bvnk.com/blog/europes-mica-regime-crypto-payments",
     img: "images/green_book.png"
   },
   {
-    title: "Partnerships",
-    sub: "News Report by PlasmaFDN",
-    href: "https://x.com/PlasmaFDN/status/1953456721306820664",
+    title: "The impact of stablecoins on Demand for Government debt",
+    sub: "Report by WARPCAST",
+    href: "https://warpcast.com/fehrsam/0x902d2105",
     img: "images/green_book.png"
   },
   {
-    title: "Stablecoins & Plasma",
-    sub: "Article by PlasmaFDN",
-    href: "https://www.plasma.to/insights/capturing-the-trillion-dollar-opportunity",
+    title: "Stablecoins are helping create a buyer of second-to-last resort for US Treasurys",
+    sub: "Article by KUNLE",
+    href: "https://writing.kunle.app/p/stablecoins-are-helping-create-a",
     img: "images/green_book.png"
   },
   {
-    title: "The Stablecoin market",
-    sub: "Youtube - Eye of Crypto",
-    href: "https://youtu.be/5Fb6Z4sLKWQ?si=ZF_Db2YFHIPFFNWx",
+    title: "Emerging technologies & innovations in stablecoins",
+    sub: "Blog by BITWAVE",
+    href: "https://www.bitwave.io/blog/top-takeaways-from-on-chain-b2b-payments-day-eth-denver",
     img: "images/green_book.png"
   },
   {
-    title: "Current state of Plasma",
-    sub: "Blog Post by Oluwapelumi",
-    href: "https://cryptoslate.com/plasma-raises-500-million-partners-with-aave-to-transform-stablecoin-market/",
+    title: "Cross-border payments: state of the market",
+    sub: "Blog by FLAGSIP",
+    href: "https://insights.flagshipadvisorypartners.com/x-border-payments-state-of-the-market-2024",
     img: "images/green_book.png"
   },
   {
-    title: "Plasma Africa and Channel",
-    sub: "News Report by SplitCapital",
-    href: "https://x.com/PlasmaAfric/status/1954976629572374757",
+    title: "Financial services",
+    sub: "Report by MCKINSEY",
+    href: "https://www.mckinsey.com/industries/financial-services/our-insights/global-payments-in-2024-simpler-interfaces-complex-reality#/",
     img: "images/green_book.png"
-  }
+  },
+  {
+    title: "Roundups podcast of news and interviews with industry leaders",
+    sub: "Podcast by STABLEDASH",
+    href: "https://open.spotify.com/show/3LBTjfkpE0RsRxD8M54SLY",
+    img: "images/green_book.png"
+  },
+  {
+    title: "Insightful Interview with founders in stablecoins niche",
+    sub: "Podcast by FINTECH BRAINFORD & DUX MEDIA",
+    href: "https://open.spotify.com/show/5L1PJLiEgPDno2F11M4Fnk",
+    img: "images/green_book.png"
+  },
+  {
+    title: "Considerations of emerging market central banks",
+    sub: "Article by FRONTIERFINTECH",
+    href: "https://frontierfintech.substack.com/p/72-stablecoins-revisited-the-factors",
+    img: "images/green_book.png"
+  },
+  {
+    title: "Keeping tracks of regulatory developments",
+    sub: "Blog by GDF",
+    href: "https://www.gdf.io/resource/regulator-consultations-responses/",
+    img: "images/green_book.png"
+  },
+  {
+    title: "Why you need a stablecoin strategy",
+    sub: "Blog by FINTECH BRAINFORD",
+    href: "https://www.fintechbrainfood.com/p/what-s-your-stablecoin-strategy",
+    img: "images/green_book.png"
+  },
+  {
+    title: "B2B Payments",
+    sub: "News by PYMNTS",
+    href: "https://www.pymnts.com/news/b2b-payments/2025/what-a-b2b-stablecoin-strategy-looks-like/",
+    img: "images/green_book.png"
+  },
 ];
 
 // render cards

@@ -2,7 +2,7 @@
 const cards = [
   {
     title: "Stablecoins 101",
-    sub: "Blog by chainalysis",
+    sub: "Blog by CHAINALYSIS",
     href: "https://www.chainalysis.com/blog/stablecoins-most-popular-asset",
     img: "images/blue_book.png"
   },
@@ -14,7 +14,7 @@ const cards = [
   },
   {
     title: "Stablecoins: Definition and Types",
-    sub: "Article by investopedia",
+    sub: "Article by INVESTOPEDIA",
     href: "https://www.investopedia.com/terms/s/stablecoin.asp",
     img: "images/blue_book.png"
   },
@@ -26,13 +26,13 @@ const cards = [
   },
   {
     title: "What are Stablecoins?",
-    sub: "Blog by Tokenmetrics",
+    sub: "Blog by TOKENMETRICS",
     href: "https://www.tokenmetrics.com/blog/stablecoins",
     img: "images/blue_book.png"
   },
   {
     title: "A Beginner's Guide To Stablecoins",
-    sub: " Blog by bitwave",
+    sub: " Blog by BITWAVE",
     href: "https://www.bitwave.io/blog/what-are-stablecoins",
     img: "images/blue_book.png"
   },
@@ -68,7 +68,7 @@ const cards = [
   },
   {
     title: "The Stablecoin market",
-    sub: "Youtube - Eye of Crypto",
+    sub: "Youtube Video by Eye of Crypto",
     href: "https://youtu.be/5Fb6Z4sLKWQ?si=ZF_Db2YFHIPFFNWx",
     img: "images/blue_book.png"
   },
@@ -89,7 +89,38 @@ const cards = [
     sub: "Article by DEATHEREUM",
     href: "https://deathereum.substack.com/p/chasing-stability-a-stablecoin-deepdive",
     img: "images/blue_book.png"
-  }
+  },
+  {
+    title: "How businesses can benefit from stablecoins",
+    sub: "Article by FITPO",
+    href: "https://www.fipto.com/articles/how-businesses-can-benefit-from-stablecoins-in-2024",
+    img: "images/blue_book.png"
+  },
+  {
+    title: "The crux of stablecoin utility",
+    sub: "Article by JOSH",
+    href: "https://medium.com/letters-from-the-savannah/getting-to-the-crux-of-stablecoin-utility-7e53fea29286",
+    img: "images/blue_book.png"
+  },
+  {
+    title: "Investors' Risk Awareness Increases As Stablecoins Gather Momentum",
+    sub: "Article by SPGLOBAL",
+    href: "https://www.spglobal.com/ratings/en/research/articles/250130-investors-risk-awareness-increases-as-stablecoins-gather-momentum-13381854",
+    img: "images/blue_book.png"
+  },
+  {
+    title: "How to buy, sell and store stablecoins",
+    sub: "Blog by MURALPAY",
+    href: "https://www.muralpay.com/blog/stablecoins-for-business-how-to-get-started",
+    img: "images/blue_book.png"
+  },
+  {
+    title: "Blockchain vs traditional payments",
+    sub: "Blog by PRIVY",
+    href: "https://privy.io/blog/onchain-payment",
+    img: "images/blue_book.png"
+  },
+
 ];
 
 // render cards
