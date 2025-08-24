@@ -1,89 +1,41 @@
 // cards
 const cards = [
   {
-    title: "Plasma Solution to Stablecoins Issues",
-    sub: "𝕏 thread by Posh",
-    href: "https://x.com/Poshthehussla/status/1929926980591325316",
+    title: "Trump Signs the GENIUS Act into Law",
+    sub: "Article by WIKIPEDIA",
+    href: "https://en..org/wiki/GENIUS_Act",
     img: "images/brown_book.png"
   },
   {
-    title: "Making Sense of PlasmaBFT",
-    sub: "𝕏 Article by Eric",
-    href: "https://x.com/ugbuericsam/status/1947965161765056779",
+    title: "GENIUS Act: fact sheet",
+    sub: "Article by WHITEHOUSE.GOV",
+    href: "https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/",
     img: "images/brown_book.png"
   },
   {
-    title: "Where Money Flows",
-    sub: "Article by Plasma",
-    href: "https://plasma.beehiiv.com/p/where-money-moves-edition-10",
+    title: "Donald Trump’s “Crypto Bible” explained",
+    sub: "Article by WIRED",
+    href: "https://www.wired.com/story/donald-trumps-new-crypto-bible-is-everything-the-industry-ever-wanted/",
     img: "images/brown_book.png"
   },
   {
-    title: "What is Plasma",
-    sub: "Blog Post by blocmates",
-    href: "https://www.blocmates.com/articles/what-is-plasma-chain",
+    title: "WEF breakdown: What the GENIUS Act means",
+    sub: "Blog by WEFORUM",
+    href: "https://www.weforum.org/stories/2025/07/stablecoin-regulation-genius-act/",
     img: "images/brown_book.png"
   },
   {
-    title: "Zaheer POV on plasma sales",
-    sub: "News Report by SplitCapital",
-    href: "https://x.com/SplitCapital/status/1949828558202785936?t=XBjyDQ4z_V5JXi58Kg8HAA&s=19",
+    title: "President Trump Signs Crypto Bill Exposing Consumers to Huge Financial Risks",
+    sub: "News by NCLC",
+    href: "https://www.nclc.org/president-trump-signs-crypto-bill-exposing-consumers-to-huge-financial-risks/",
     img: "images/brown_book.png"
   },
   {
-    title: "Stablecoins need a Layer",
-    sub: "𝕏 thread by Bullish bunt",
-    href: "https://x.com/bullish_bunt/status/1934208887013478400",
+    title: "ICIJ global take on “landmark crypto law”",
+    sub: "Article by ICIJ",
+    href: "https://www.icij.org/news/2025/07/landmark-cryptocurrency-legislation-passes-u-s-house-to-be-signed-into-law-by-president-trump/,
     img: "images/brown_book.png"
-  },
-  {
-    title: "Zero Fee Chain",
-    sub: "Article by Smooth",
-    href: "https://console.pluid.com/article/plasma-the-zero-fee-chain-built-for-global-payments-ivdciie8vu",
-    img: "images/brown_book.png"
-  },
-  {
-    title: "Biggest Opportunity in 2025",
-    sub: "Youtube by Degen Investor",
-    href: "https://youtu.be/da5J8UQ2Jdk?si=Km1L5iYzY8BKLBoA",
-    img: "images/brown_book.png"
-  },
-  {
-    title: "What is Plasma Chain",
-    sub: "Blog Post by blocmates",
-    href: "https://www.blocmates.com/articles/what-is-plasma-chain",
-    img: "images/brown_book.png"
-  },
-  {
-    title: "Partnerships",
-    sub: "News Report by PlasmaFDN",
-    href: "https://x.com/PlasmaFDN/status/1953456721306820664",
-    img: "images/brown_book.png"
-  },
-  {
-    title: "Stablecoins & Plasma",
-    sub: "Article by PlasmaFDN",
-    href: "https://www.plasma.to/insights/capturing-the-trillion-dollar-opportunity",
-    img: "images/brown_book.png"
-  },
-  {
-    title: "The Stablecoin market",
-    sub: "Youtube - Eye of Crypto",
-    href: "https://youtu.be/5Fb6Z4sLKWQ?si=ZF_Db2YFHIPFFNWx",
-    img: "images/brown_book.png"
-  },
-  {
-    title: "Current state of Plasma",
-    sub: "Blog Post by Oluwapelumi",
-    href: "https://cryptoslate.com/plasma-raises-500-million-partners-with-aave-to-transform-stablecoin-market/",
-    img: "images/brown_book.png"
-  },
-  {
-    title: "Plasma Africa and Channel",
-    sub: "News Report by SplitCapital",
-    href: "https://x.com/PlasmaAfric/status/1954976629572374757",
-    img: "images/brown_book.png"
-  }
+  }    
 ];
 
 // render cards
