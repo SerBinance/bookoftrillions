@@ -3,7 +3,7 @@ const cards = [
   {
     title: "Trump Signs the GENIUS Act into Law",
     sub: "Article by WIKIPEDIA",
-    href: "https://en..org/wiki/GENIUS_Act",
+    href: "https://en.wikipedia.org/wiki/GENIUS_Act",
     img: "images/brown_book.png"
   },
   {
@@ -33,7 +33,7 @@ const cards = [
   {
     title: "ICIJ global take on “landmark crypto law”",
     sub: "Article by ICIJ",
-    href: "https://www.icij.org/news/2025/07/landmark-cryptocurrency-legislation-passes-u-s-house-to-be-signed-into-law-by-president-trump/,
+    href: "https://www.icij.org/news/2025/07/landmark-cryptocurrency-legislation-passes-u-s-house-to-be-signed-into-law-by-president-trump/",
     img: "images/brown_book.png"
   }    
 ];
